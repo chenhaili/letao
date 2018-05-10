@@ -21,3 +21,21 @@ $(document).ajaxStop(function () {
     NProgress.done();
   }, 500);
 });
+
+/*  二 首页效果  */
+$(function () {
+  // 1.二级菜单切换
+  $('.category').click(function () {
+    $('.lt_aside .child').stop().slideToggle();
+  });
+  
+  // 2.点击菜单按钮切换
+  $('.icon_menu').click(function () {
+    $('.lt_aside').toggleClass("hidemenu");
+    $('.lt_topbar').toggleClass("hidemenu");
+    $('.lt_main').toggleClass("hidemenu");
+  });
+  
+ 
+  
+});
