@@ -52,42 +52,54 @@ $(function () {
       }
     }
   })
-});
+
 
 // 2 基本登录功能
 // 校验成功,调用
-$('#form').on("success.form.bv", function (e) {
-  // 阻止默认的提交
-  e.preventDefault();
-  console.log($('#form').serialize());
-  
-  // 通过ajax提交
-  $.ajax({
-    type: "post",
-    url: "/employee/employeeLogin",
-    dataType: "json",
-    data: $('#form').serialize(),
-    success: function (info) {
-      console.log(info);
-      if (info.success) {
-        //登录成功
-        location.href = "index.html";
+  $('#form').on("success.form.bv", function (e) {
+    // 阻止默认的提交
+    e.preventDefault();
+    console.log($('#form').serialize());
+    
+    // 通过ajax提交
+    $.ajax({
+      type: "post",
+      url: "/employee/employeeLogin",
+      dataType: "json",
+      data: $('#form').serialize(),
+      success: function (info) {
+        console.log(info);
+        if (info.success) {
+          //登录成功
+          location.href = "index.html";
+        }
+        if (info.error === 1001) {
+          // 密码错误
+          // 将密码框, 校验状态改成 错误状态 INVALID
+          // updateStatus 三个参数
+          // 参数1: 字段名称
+          // 参数2: 校验状态  VALID成功  INVALID失败
+          // 参数3: 校验规则(主要是用来设置, 提示信息的)
+          $('#form').data("bootstrapValidator").updateStatus("password", "INVALID", "callback");
+        }
+        if (info.error === 1000) {
+          // 用户名不存在
+          $('#form').data("bootstrapValidator").updateStatus("username", "INVALID", "callback");
+        }
       }
-      if (info.error === 1001) {
-        // 密码错误
-        // 将密码框, 校验状态改成 错误状态 INVALID
-        // updateStatus 三个参数
-        // 参数1: 字段名称
-        // 参数2: 校验状态  VALID成功  INVALID失败
-        // 参数3: 校验规则(主要是用来设置, 提示信息的)
-        $('#form').data("bootstrapValidator").updateStatus("password", "INVALID", "callback");
-      }
-      if (info.error === 1000) {
-        // 用户名不存在
-        $('#form').data("bootstrapValidator").updateStatus("username", "INVALID", "callback");
-      }
-    }
+    })
+  });
+
+
+// 3 实现重置功能
+  $('[type="reset"]').click(function () {
+    // 重置所有内容
+    // resetForm 传 true, 重置状态和内容
+    // 不传 true, 只重置校验状态
+    $('#form').data("bootstrapValidator").resetForm(true);
   })
+  
+  
 });
 
 
