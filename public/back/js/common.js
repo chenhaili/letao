@@ -2,8 +2,12 @@
  * Created by chenli on 2018/5/9.
  */
 
+
+
+/*  一 进度条效果  */
+
 // 禁用进度条
-NProgress.configure({ showSpinner: false });
+NProgress.configure({showSpinner: false});
 
 // 开启进度条
 $(document).ajaxStart(function () {
@@ -15,5 +19,5 @@ $(document).ajaxStop(function () {
   setTimeout(function () {
     // 结束进度条
     NProgress.done();
-  },500);
+  }, 500);
 });
