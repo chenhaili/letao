@@ -6,6 +6,10 @@
   margin-top: 150px;
 }
 
+.mb_20 {
+  margin-bottom: 20px;
+}
+
 /*登录面板*/
 .panel-title {
   height: 40px;
@@ -38,6 +42,13 @@ ul {
 
 .red {
   color: #A94442;
+}
+
+/*表格内容垂直居中*/
+.table.table-bordered th,
+.table.table-bordered td {
+  text-align: center;
+  vertical-align: middle;
 }
 
 /*.lt_aside 乐淘侧边栏*/
@@ -87,7 +98,7 @@ ul {
   color: #fff;
   font-size: 18px;
   height: 30px;
-  line-height: 30px;
+  line-height: 55px;
 }
 
 .lt_aside .nav li a {
@@ -117,7 +128,6 @@ ul {
 /* lt_main 主体内容开始 */
 .lt_main {
   min-height: 1000px;
-  background-color: pink;
   padding-left: 180px;
   padding-top: 50px;
   transition: all 1s;
@@ -153,6 +163,13 @@ ul {
 
 .lt_main .breadcrumb {
   margin-top: 20px;
+}
+
+/*echarts图表容器*/
+.lt_content .echarts_1,
+.lt_content .echarts_2 {
+  width: 48%;
+  height: 400px;
 }
 
 /* lt_main 结束 */

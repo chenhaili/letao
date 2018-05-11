@@ -64,7 +64,7 @@ $(function () {
       success: function( info ) {
         console.log( info );
         if ( info.success ) {
-          // 退出成功, 退出成功, 跳回登录页
+          // 退出成功, 跳回登录页
           location.href = "login.html";
         }
       }

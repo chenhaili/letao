@@ -16,7 +16,6 @@ if ( location.href.indexOf("login.html") === -1 ) {
     url: "/employee/checkRootLogin",
     dataType: "json",
     success: function( info ) {
-      console.log( info );
       if ( info.error === 400 ) {
         location.href = "login.html";
       }

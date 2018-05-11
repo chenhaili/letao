@@ -5,6 +5,9 @@
 .mt_150 {
   margin-top: 150px;
 }
+.mb_20 {
+  margin-bottom: 20px;
+}
 
 .panel-title {
   height: 40px;
@@ -35,6 +38,15 @@ ul {
 .red {
   color: #A94442;
 }
+
+/* 希望让所有的表格内容, 都水平垂直居中 */
+.table.table-bordered th,
+.table.table-bordered td {
+  text-align: center;
+  /* 设置表格内容垂直居中 */
+  vertical-align: middle;
+}
+
 
 
 
@@ -110,7 +122,6 @@ ul {
 /* lt_main 开始 */
 .lt_main {
   min-height: 1000px;
-  background-color: pink;
   padding-left: 180px;
   padding-top: 50px;
   transition: all 1s;
@@ -143,6 +154,12 @@ ul {
 }
 .lt_main .breadcrumb {
   margin-top: 20px;
+}
+
+.lt_content .echarts_1,
+.lt_content .echarts_2 {
+  width: 48%;
+  height: 400px;
 }
 
 
