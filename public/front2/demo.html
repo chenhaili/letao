@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .father {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+      position: relative;
+    }
+    .son {
+      /* 由于没有设置宽高, 既要居左, 又要居右, 导致宽度直接和父容器一样大了 */
+      /* 如果设置了宽高, 同时设置了 left 和 right, 以 left 为准 */
+      /* 如果设置了宽高, 同时设置了 top 和 bottom, 以 top 为准 */
+      /*width: 200px;*/
+      /*height: 200px;*/
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: yellowgreen;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+<div class="father">
+  <div class="son"></div>
+</div>
+
+
+</body>
+</html>

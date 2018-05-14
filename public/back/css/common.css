@@ -159,6 +159,7 @@ ul {
   color: #fff;
   font-size: 20px;
   text-align: center;
+  z-index: 666;
 }
 
 .lt_main .breadcrumb {
